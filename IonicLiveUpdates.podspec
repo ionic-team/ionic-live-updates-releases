@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   s.authors = { 'Ionic Team' => 'hi@ionicframework.com' }
   s.source = { :http => 'https://github.com/ionic-team/ionic-live-updates-releases/releases/download/0.1.2/IonicLiveUpdates.xcframework.zip',
-               :sha256 => '95943868896cfad26719a24361c73ac1f9102d14a0bb75399fd47a93df862b7b' }
+               :sha256 => '166f7db755bedcc5a2eb6d3ba70f10d29e1db2ee0b88bc3be6d704d44d194f38' }
   s.vendored_frameworks = 'IonicLiveUpdates.xcframework'
   s.swift_version = '5.1'
 end
