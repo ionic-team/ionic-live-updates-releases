@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install build dependencies
-        run: brew install cocoapods
+        run: gem install cocoapods
       - name: Validate podspec
-        run: pod spec lint
+        run: pod spec lint --allow-warnings
       - name: Publish podspec
-        run: pod trunk push
+        run: pod trunk push --allow-warnings
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
