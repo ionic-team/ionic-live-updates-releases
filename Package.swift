@@ -14,8 +14,8 @@ let package = Package(
     targets: [
       .binaryTarget(
         name: "IonicLiveUpdates",
-        url: "https://github.com/ionic-team/ionic-live-updates-releases/releases/download/0.2.0/IonicLiveUpdates.xcframework.zip",
-        checksum: "df1dfb1ffb61d9d6542869708476b0fd04c0879d851918ea4538c89b6cb793c5"
+        url: "https://github.com/ionic-team/ionic-live-updates-releases/releases/download/0.2.1/IonicLiveUpdates.xcframework.zip",
+        checksum: "9e11e606736b1e65aaf945154a030e71cf54099eda8e5ec94aa44b875e264b79"
       )
     ]
 )
