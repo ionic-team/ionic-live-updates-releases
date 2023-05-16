@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "IonicLiveUpdates",
-    platforms: [ .iOS(.v12) ],
+    platforms: [ .iOS(.v13) ],
     products: [
       .library(
         name: "IonicLiveUpdates", 
@@ -14,8 +14,8 @@ let package = Package(
     targets: [
       .binaryTarget(
         name: "IonicLiveUpdates",
-        url: "https://github.com/ionic-team/ionic-live-updates-releases/releases/download/0.4.0/IonicLiveUpdates.xcframework.zip",
-        checksum: "124fcbdee17b5dafa9ddc21b4c73d9b0002421db2e3e437ac095ec6ea50890f7"
+        url: "https://github.com/ionic-team/ionic-live-updates-releases/releases/download/0.4.1/IonicLiveUpdates.xcframework.zip",
+        checksum: "5b9b9a1d9267cca980dc89389ac0ba91985c11050d179979f0f8bfddcf17e612"
       )
     ]
 )
