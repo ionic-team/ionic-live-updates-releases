@@ -1,20 +1,36 @@
-name: Publish to Cocoapods
+name: Publish to CocoaPods
 
 on:
   push:
     tags:
-    - '*'
+      - '*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   publish-to-cocoapods:
     runs-on: macos-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v2
-      - name: Install build dependencies
-        run: gem install cocoapods
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+
+      - name: Install CocoaPods
+        run: gem install cocoapods --no-document
+
       - name: Validate podspec
         run: pod spec lint --allow-warnings
+
       - name: Publish podspec
         run: pod trunk push --allow-warnings
         env:
