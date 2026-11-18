@@ -17,10 +17,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.4'
-
       - name: Install CocoaPods
         run: gem install cocoapods --no-document
 
