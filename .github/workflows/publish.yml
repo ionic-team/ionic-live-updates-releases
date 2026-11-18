@@ -1,20 +1,28 @@
-name: Publish to Cocoapods
+name: Publish to CocoaPods
 
 on:
   push:
     tags:
-    - '*'
+      - '*'
+
+permissions:
+  contents: read
 
 jobs:
   publish-to-cocoapods:
     runs-on: macos-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v2
-      - name: Install build dependencies
-        run: gem install cocoapods
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install CocoaPods
+        run: gem install cocoapods --no-document
+
       - name: Validate podspec
         run: pod spec lint --allow-warnings
+
       - name: Publish podspec
         run: pod trunk push --allow-warnings
         env:
